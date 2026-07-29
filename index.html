@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backyard Brews — Good Coffee. Good People. Great Moments.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: #1c2e1f;
+      background: #faf7f2;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Typography ── */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .accent { font-family: 'Playfair Display', serif; font-style: italic; color: #b8860b; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Shared section patterns ── */
+    section { padding: 72px 0; }
+    section:nth-child(even) { background: #f3efe8; }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b8860b;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* ── Hero ── */
+    .hero { padding: 48px 0 64px; }
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(28, 46, 31, 0.12);
+    }
+    .hero-text { text-align: center; max-width: 640px; }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1c2e1f;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .hero-text .accent {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #b8860b;
+    }
+    .hero-text p {
+      font-size: 1.05rem;
+      color: #4a5c4d;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Map Section ── */
+    .map-section { padding: 48px 0 72px; background: #f3efe8; }
+    .map-section .container { text-align: center; }
+    .map-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1c2e1f;
+      margin-bottom: 28px;
+    }
+    .map-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(28, 46, 31, 0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+    }
+    .map-address {
+      font-size: 0.75rem;
+      color: #8ba08e;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .hero-text h1 { font-size: 1.8rem; }
+      .hero { padding: 32px 0 40px; }
+      section { padding: 48px 0; }
+      .map-wrapper iframe { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Hero ─── -->
+  <section class="hero" id="about">
+    <div class="container">
+      <img
+        class="hero-image"
+        src="images/backyard-brews.png"
+        alt="Backyard Brews — two friends sharing coffee under a tree in the backyard"
+      />
+      <div class="hero-text">
+        <span class="accent">Good coffee. Good people. Great moments.</span>
+        <h1>Your neighbourhood<br />backyard escape</h1>
+        <p>
+          A cozy corner where quality coffee meets genuine connection.
+          Pull up a chair, stay a while.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Map ─── -->
+  <section class="map-section">
+    <div class="container">
+      <span class="section-label">Find us</span>
+      <h2>Come find your backyard</h2>
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps?q=Backyard+Brews+Denai+Alam&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Backyard Brews location on Google Maps"
+        ></iframe>
+      </div>
+      <p class="map-address">S-G-07, Tulip Residence 6, Persiaran Metafasa, Taman Bukit Subang, Denai Alam, 40160 Shah Alam, Selangor</p>
+    </div>
+  </section>
+
+</body>
+</html>

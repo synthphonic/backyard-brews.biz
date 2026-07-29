@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backyard Brews — Good Coffee. Good People. Great Moments.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: #1c2e1f;
+      background: #faf7f2;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Typography ── */
+    h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+    .accent { font-family: 'Playfair Display', serif; font-style: italic; color: #b8860b; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(28, 46, 31, 0.08);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 14px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1c2e1f;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: #b8860b; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 48px 0 64px;
+    }
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(28, 46, 31, 0.12);
+    }
+    .hero-text {
+      text-align: center;
+      max-width: 640px;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1c2e1f;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .hero-text .accent {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #b8860b;
+    }
+    .hero-text p {
+      font-size: 1.05rem;
+      color: #4a5c4d;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Sections ── */
+    section { padding: 72px 0; }
+    section:nth-child(even) { background: #f3efe8; }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b8860b;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1c2e1f;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      color: #4a5c4d;
+      max-width: 600px;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    /* ── Values ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+    .value-card {
+      background: #faf7f2;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(28, 46, 31, 0.08);
+    }
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .value-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .value-card p {
+      font-size: 0.9rem;
+      color: #4a5c4d;
+    }
+
+    /* ── Hours Card ── */
+    .hours-card {
+      background: #1c2e1f;
+      color: #faf7f2;
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .hours-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .hours-card .accent { color: #d4a843; }
+    .hours-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .hours-row .days { font-weight: 500; }
+    .hours-row .time { color: #c0cdc2; }
+    .hours-note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #a0b3a3;
+      font-style: italic;
+    }
+
+    /* ── Location ── */
+    .location-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .location-info { flex: 1; min-width: 260px; }
+    .location-info address {
+      font-style: normal;
+      font-size: 1.1rem;
+      color: #1c2e1f;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .location-info .accent { display: block; margin-top: 12px; }
+    .location-map {
+      flex: 1;
+      min-width: 260px;
+      height: 260px;
+      background: #e2dcd2;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a5c4d;
+      font-size: 0.9rem;
+    }
+
+    /* ── Social / Footer ── */
+    .social-banner {
+      background: #1c2e1f;
+      padding: 40px 24px;
+      text-align: center;
+      color: #faf7f2;
+    }
+    .social-banner .accent { font-size: 1.3rem; display: block; margin-bottom: 16px; color: #d4a843; }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      font-size: 1.05rem;
+    }
+    .social-links a {
+      color: #c0cdc2;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .social-links a:hover { color: #faf7f2; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #8ba08e;
+      border-top: 1px solid rgba(28, 46, 31, 0.08);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .nav-links { gap: 16px; font-size: 0.75rem; }
+      .hero-text h1 { font-size: 1.8rem; }
+      .hero { padding: 32px 0 40px; }
+      section { padding: 48px 0; }
+      .section-title { font-size: 1.5rem; }
+      .hours-card { padding: 32px 20px; }
+      .social-links { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─── -->
+  <nav>
+    <div class="container">
+      <span class="logo">Backyard Brews</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <section class="hero" id="about">
+    <div class="container">
+      <img
+        class="hero-image"
+        src="backyard-brews.png"
+        alt="Backyard Brews — two friends sharing coffee under a tree in the backyard"
+      />
+      <div class="hero-text">
+        <span class="accent">Good coffee. Good people. Great moments.</span>
+        <h1>Your neighbourhood<br />backyard escape</h1>
+        <p>
+          A cozy corner where quality coffee meets genuine connection.
+          Pull up a chair, stay a while.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Values ─── -->
+  <section id="values">
+    <div class="container">
+      <span class="section-label">What we stand for</span>
+      <h2 class="section-title">Brewed with heart</h2>
+      <p class="section-desc">
+        Every cup we serve is rooted in three simple promises — to the bean, to
+        the space, and to the people who walk through the gate.
+      </p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🫘</div>
+          <h3>Quality Coffee</h3>
+          <p>Sourcing ethically grown beans, roasted locally, and brewed with care — from pour-over to espresso.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">☕</div>
+          <h3>Warm Atmosphere</h3>
+          <p>String lights, mismatched chairs, and the kind of quiet that lets a conversation breathe. Your backyard away from home.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Community First</h3>
+          <p>A gathering place, not just a coffee shop. We host local makers, open mic nights, and the neighbourhood plant swap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Hours ─── -->
+  <section id="hours">
+    <div class="container">
+      <div class="hours-card">
+        <span class="accent">☕ See you in the backyard</span>
+        <h2>Opening Hours</h2>
+        <div class="hours-row">
+          <span class="days">Tuesday – Sunday</span>
+          <span class="time">11AM – 11PM</span>
+        </div>
+        <div class="hours-row" style="color:#a0b3a3;font-size:0.9rem;">
+          <span class="days">Afternoon break</span>
+          <span class="time">4PM – 6PM</span>
+        </div>
+        <p class="hours-note">Closed on Mondays — we're out sourcing the week's best beans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact / Location ─── -->
+  <section id="contact">
+    <div class="container">
+      <span class="section-label">Find us</span>
+      <h2 class="section-title">Come on over</h2>
+      <div class="location-wrap">
+        <div class="location-info">
+          <address>
+            <strong>Backyard Brews</strong><br />
+            No. 12, Jalan SS2/67<br />
+            47300 Petaling Jaya<br />
+            Selangor, Malaysia
+          </address>
+          <p style="color:#4a5c4d;">
+            Tucked away behind the old bungalow — look for the string lights.
+          </p>
+          <span class="accent">✉ hello@backyardbrews.my</span>
+        </div>
+        <div class="location-map">
+          <span>📍 Map placeholder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Social ─── -->
+  <div class="social-banner">
+    <span class="accent">See you in the backyard!</span>
+    <div class="social-links">
+      <a href="https://instagram.com/backyardbrews.my" target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://tiktok.com/@backyardbrews.my" target="_blank" rel="noopener">🎵 TikTok</a>
+      <a href="mailto:hello@backyardbrews.my">✉ Email</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Backyard Brews. Good coffee, good people, great moments.
+  </footer>
+
+</body>
+</html>
